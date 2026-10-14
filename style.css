@@ -1,0 +1,234 @@
+/* 1 · Box-modellen: bredden gäller hela lådan */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2 · Varumärket som variabler */
+:root {
+    --text: #1f2430;
+    --yta: #ffffff;
+    --yta-2: #f3f1ec;
+    --kant: #e2ded5;
+    --primar: #1d4e89;
+    --accent: #f6b3ef;
+    --knapptext: #1f2430;
+    --luft: 1rem;
+    --radie: 12px;
+}
+
+/* 3 · Grundstil */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--yta);
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+    color: var(--primar);
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    max-width: 65ch;
+}
+
+a {
+    color: var(--primar);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 4 · Sidhuvud och meny */
+.sidhuvud {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--luft);
+    padding: calc(var(--luft) * 1.5);
+    background: var(--yta-2);
+}
+
+.roll {
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--luft);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    font-weight: 600;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* 5 · Innehållsytan */
+main {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 0 calc(var(--luft) * 1.5);
+}
+
+section {
+    padding: calc(var(--luft) * 3) 0;
+}
+
+.knapp {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background: var(--accent);
+    color: var(--knapptext);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: var(--radie);
+}
+
+/* 6 · Kort i ett rutnät */
+.rutnat {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: calc(var(--luft) * 1.5);
+    list-style: none;
+    padding: 0;
+}
+
+.kort {
+    background: var(--yta-2);
+    padding: calc(var(--luft) * 1.5);
+    border: 1px solid var(--kant);
+    border-radius: var(--radie);
+}
+
+.kort h3 {
+    margin-top: 0;
+}
+
+.kort img {
+    border-radius: calc(var(--radie) / 2);
+    margin-bottom: var(--luft);
+}
+
+/* 6.5 · Arbetslivserfarenhet */
+.erfarenhet-lista {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--luft) * 1.5);
+}
+
+.erfarenhet-post {
+    background: var(--yta-2);
+    padding: calc(var(--luft) * 1.5);
+    border: 1px solid var(--kant);
+    border-radius: var(--radie);
+}
+
+.erfarenhet-post h3 {
+    margin: 0 0 0.25rem 0;
+}
+
+.datum {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primar);
+    margin: 0 0 var(--luft) 0;
+}
+
+.erfarenhet-post ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.erfarenhet-post li {
+    margin-bottom: 0.5rem;
+}
+
+.erfarenhet-post li:last-child {
+    margin-bottom: 0;
+}
+
+/* 7 · Knappar och fokus */
+button {
+    font: inherit;
+    padding: 0.6rem 1.1rem;
+    color: var(--primar);
+    background: var(--yta);
+    border: 2px solid var(--primar);
+    border-radius: var(--radie);
+    cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--primar);
+    outline-offset: 3px;
+}
+
+footer {
+    padding: calc(var(--luft) * 2);
+    text-align: center;
+    background: var(--yta-2);
+}
+
+footer p {
+    margin: 0 auto;
+}
+
+/* 8 · Större skärmar */
+@media (min-width: 48rem) {
+    .sidhuvud {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: calc(var(--luft) * 1.5) calc(var(--luft) * 3);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* 9 · Mörkt läge: nya färger när body har klassen morkt */
+body.morkt {
+    --text: #e8e6e1;
+    --yta: #14171f;
+    --yta-2: #1f2430;
+    --kant: #343a48;
+    --primar: #8ab4f8;
+}
