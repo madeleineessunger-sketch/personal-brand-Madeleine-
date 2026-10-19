@@ -1832,3 +1832,36 @@ body.morkt .logotyp-emblem {
     width: 48px;
     height: 48px;
 }
+/* Kurser – mindre kort i samma stil som utbildningen */
+.kurser-rutnat {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.kurs-post {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1.1rem 1.25rem;
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--text-huvud);
+}
+.kurs-nummer {
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+@media (max-width: 65rem) {
+    .kurser-rutnat { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 40rem) {
+    .kurser-rutnat { grid-template-columns: 1fr; }
+}
