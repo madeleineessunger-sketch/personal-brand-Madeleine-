@@ -15,24 +15,9 @@
     <link rel="icon" type="image/svg+xml" href="img/logotyp-me.svg">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5LG9DC3Z');</script>
-    <!-- End Google Tag Manager -->
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LG9DC3Z" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <!-- Topp-banner inspirerad av referensbilden -->
     <aside class="topp-banner" aria-label="Profilsammanfattning">
         <div class="topp-banner-innehall">
@@ -609,6 +594,11 @@
                     </p>
 
                     <form id="kontakt-formular" class="kontakt-formular">
+                        <!-- Honeypot: ska vara tomt. Hjälper till att fånga enkla skript utan att störa besökare. -->
+                        <div class="form-honeypot" aria-hidden="true">
+                            <label for="form-webbplats">Webbplats</label>
+                            <input type="text" id="form-webbplats" name="webbplats" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="form-rad-tva">
                             <div class="form-grupp">
                                 <label for="form-namn">Ditt namn <span class="kravt-marke"
@@ -678,6 +668,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="form-fel" class="form-fel" hidden role="alert"></div>
                     </form>
                 </div>
             </div>
@@ -700,9 +691,25 @@
                 <a href="https://www.linkedin.com/in/madeleine-essunger-0b7719321/" target="_blank"
                     rel="noopener noreferrer">LinkedIn</a>
             </div>
+            <button type="button" class="cookie-installningar-knapp" id="oppna-cookie-installningar">
+                Cookieinställningar
+            </button>
             <p class="sidfot-copyright">© 2026 Madeleine Essunger · Byggd för hand med HTML, CSS och JavaScript</p>
         </div>
     </footer>
+    <aside class="cookie-ruta" id="cookie-ruta" role="dialog" aria-modal="true" aria-labelledby="cookie-rubrik" hidden>
+        <div class="cookie-ruta-innehall">
+            <div>
+                <p class="cookie-eyebrow">DIN INTEGRITET</p>
+                <h2 id="cookie-rubrik">Vi använder cookies</h2>
+                <p>Vi använder nödvändiga inställningar för att sidan ska fungera. Om du godkänner kan vi också använda analyscookies via Google Tag Manager för att förstå hur sidan används.</p>
+            </div>
+            <div class="cookie-knappar">
+                <button type="button" class="cookie-avvisa" id="avvisa-cookies">Avvisa</button>
+                <button type="button" class="cookie-godkann" id="godkann-cookies">Godkänn analyscookies</button>
+            </div>
+        </div>
+    </aside>
 </body>
 
 </html>

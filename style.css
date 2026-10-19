@@ -1330,6 +1330,15 @@ a.kontakt-post-kort:hover .kontakt-post-ikon {
     gap: 1.25rem;
 }
 
+.form-honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
 .form-rad-tva {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1397,6 +1406,107 @@ a.kontakt-post-kort:hover .kontakt-post-ikon {
     border: 1px solid #C8E6C9;
     border-radius: var(--radie-liten);
     animation: fadeIn 0.3s ease;
+}
+
+.form-fel {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid #b95151;
+    background: #fff4f4;
+    color: #7d2525;
+    font-size: 0.95rem;
+}
+
+/* Cookie-samtycke */
+.cookie-installningar-knapp {
+    margin-top: 1rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    cursor: pointer;
+}
+
+.cookie-ruta {
+    position: fixed;
+    z-index: 1000;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    max-width: 680px;
+    max-height: calc(100dvh - 1.5rem);
+    margin: 0 auto;
+    padding: 1.5rem;
+    border: 1px solid var(--accent);
+    border-radius: var(--radie-kort);
+    background: var(--bg-kort);
+    color: var(--text-huvud);
+    box-shadow: 0 12px 36px rgba(32, 20, 17, 0.2);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.cookie-ruta[hidden] { display: none; }
+
+.cookie-eyebrow {
+    margin: 0 0 0.4rem;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.cookie-ruta h2 {
+    margin: 0;
+    font-size: 1.55rem;
+}
+
+.cookie-ruta p:not(.cookie-eyebrow) {
+    margin: 0.65rem 0 0;
+    line-height: 1.6;
+}
+
+.cookie-knappar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.15rem;
+}
+
+.cookie-knappar button {
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border-radius: var(--radie-liten);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cookie-godkann {
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+}
+
+.cookie-avvisa {
+    border: 1px solid currentColor;
+    background: transparent;
+    color: inherit;
+}
+
+@media (max-width: 540px) {
+    .cookie-ruta {
+        right: max(0.75rem, env(safe-area-inset-right));
+        bottom: max(0.75rem, env(safe-area-inset-bottom));
+        left: max(0.75rem, env(safe-area-inset-left));
+        max-height: calc(100dvh - 1.5rem - env(safe-area-inset-bottom));
+        padding: 1.2rem;
+    }
+
+    .cookie-knappar button { width: 100%; }
 }
 
 @keyframes fadeIn {
