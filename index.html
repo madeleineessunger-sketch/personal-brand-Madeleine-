@@ -7,135 +7,676 @@
     <title>Madeleine Essunger – Digital Marketing Specialist</title>
     <meta name="description"
         content="Madeleine Essunger hjälper små företag att synas och växa digitalt med sök, sociala medier och e-post. Se projekt och ta kontakt.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="img/logotyp-me.svg">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5LG9DC3Z');</script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body>
-    <header class="sidhuvud">
-        <div>
-            <h1>Madeleine Essunger</h1>
-            <p class="roll">Digital Marketing Specialist i Göteborg</p>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LG9DC3Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Topp-banner inspirerad av referensbilden -->
+    <aside class="topp-banner" aria-label="Profilsammanfattning">
+        <div class="topp-banner-innehall">
+            <span>DIGITAL MARKETING SPECIALIST</span>
+            <span class="topp-punkt" aria-hidden="true">•</span>
+            <span>SÖK &amp; SOCIALA MEDIER</span>
+            <span class="topp-punkt" aria-hidden="true">•</span>
+            <span>GÖTEBORG</span>
         </div>
-        <nav aria-label="Huvudmeny">
-            <ul>
-                <li><a href="#om">Om mig</a></li>
-                <li><a href="#erfarenhet">Arbetslivserfarenhet</a></li>
-                <li><a href="#tjanster">Vad jag gör</a></li>
-                <li><a href="#projekt">Projekt</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
-        </nav>
-        <button id="tema" type="button" hidden>Byt till mörkt läge</button>
+    </aside>
+
+    <!-- Huvudsakligt sidhuvud -->
+    <header class="sidhuvud">
+        <div class="sidhuvud-innehall">
+            <div class="varumarke">
+                <h1 class="varumarke-titel">
+                    <a href="#" class="logotyp" aria-label="Madeleine Essunger - Till startsidan">
+                        <!-- Elegant ME Monogram Logotyp -->
+                        <div class="logotyp-emblem" aria-hidden="true">
+                            <svg class="emblem-svg" viewBox="0 0 100 100" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="emblemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#C58C89" />
+                                        <stop offset="50%" stop-color="#B17B6A" />
+                                        <stop offset="100%" stop-color="#D99F8D" />
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="50" cy="50" r="47" stroke="url(#emblemGrad)" stroke-width="1.5" />
+                                <circle cx="50" cy="50" r="43.5" stroke="url(#emblemGrad)" stroke-width="0.75"
+                                    stroke-dasharray="2 3" opacity="0.65" />
+                                <circle cx="50" cy="50" r="40" fill="url(#emblemGrad)" fill-opacity="0.04" />
+                                <text x="39" y="64" class="emblem-bokstav-m">M</text>
+                                <text x="61" y="64" class="emblem-bokstav-e">E</text>
+                                <circle cx="50" cy="21" r="1.4" fill="url(#emblemGrad)" />
+                                <circle cx="50" cy="79" r="1.4" fill="url(#emblemGrad)" />
+                            </svg>
+                        </div>
+                        <span class="logotyp-me-text">ME</span>
+                    </a>
+                </h1>
+            </div>
+
+            <!-- Mobilmeny-knapp (visas på mindre skärmar) -->
+            <button class="meny-knapp" id="meny-knapp" type="button" aria-label="Öppna navigationsmeny"
+                aria-expanded="false" aria-controls="huvudmeny">
+                <span class="meny-linje"></span>
+                <span class="meny-linje"></span>
+                <span class="meny-linje"></span>
+            </button>
+
+            <!-- Navigationsmeny & Åtgärder -->
+            <nav id="huvudmeny" class="huvudmeny" aria-label="Huvudmeny">
+                <ul class="nav-lankar">
+                    <li><a href="#om">Om mig</a></li>
+                    <li><a href="#tjanster">Vad jag gör</a></li>
+                    <li><a href="#erfarenhet">Arbetslivserfarenhet</a></li>
+                    <li><a href="#projekt">Projekt</a></li>
+                    <li class="nav-kontakt-mobil"><a href="#kontakt">Kontakt</a></li>
+                </ul>
+
+                <div class="header-handlingar">
+                    <button id="tema" type="button" class="tema-knapp" hidden
+                        aria-label="Växla mellan mörkt och ljust läge">Byt till mörkt läge</button>
+                    <a href="https://www.linkedin.com/in/madeleine-essunger-0b7719321/" target="_blank"
+                        rel="noopener noreferrer" class="header-social-lank" aria-label="Madeleine Essunger på LinkedIn"
+                        title="Besök min LinkedIn-profil">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" aria-hidden="true">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                        <span class="header-social-text">LinkedIn</span>
+                    </a>
+                    <a href="#kontakt" class="header-cta-knapp">Kontakt</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section class="intro">
-            <h2>Jag hjälper små företag att bli hittade och valda online</h2>
-            <p>Sök, sociala medier och e-post som hänger ihop – så att rätt kunder hittar dig och väljer dig.</p>
-            <a class="knapp" href="#kontakt">Boka ett samtal</a>
-        </section>
+        <!-- 1 · HERO-SEKTION (Split-layout med bild och text bredvid varandra) -->
+        <section class="intro hero-sektion">
+            <div class="hero-container">
+                <div class="hero-text-kolumn">
+                    <span class="sektion-eyebrow">DIGITAL STRATEGI &bull; CONTENT &bull; TILLVÄXT</span>
+                    <h2 class="hero-rubrik">
+                        Synas i sök.<br>
+                        <span class="hero-rubrik-kursiv">Väljas online.</span>
+                    </h2>
+                    <p class="hero-ingress">
+                        Jag hjälper små företag att bli hittade och valda online genom sök, sociala medier och e-post
+                        som
+                        hänger ihop – så att rätt kunder hittar dig och väljer dig.
+                    </p>
+                    <div class="hero-knapp-grupp">
+                        <a class="knapp knapp-primar" href="#kontakt">Boka ett samtal</a>
+                        <a class="knapp knapp-sekundar" href="#tjanster">Mina tjänster</a>
+                    </div>
 
-        <section id="om">
-            <h2>Om mig</h2>
-            <img src="img/bild.jpeg" alt="Bild på Madeleine Essunger" width="300" height="400">
-            <img src="img/bild 2.jpeg" alt="Bild på IMHs logga" width="300" height="300">
-            <p>Jag utbildar mig till Digital Marketing Specialist på IHM Business School och har ett särskilt intresse
-                för marknadsföring, strategi och kommunikation.</p>
-            <p>Innan utbildningen arbetade jag i butik och såg hur mycket en bra Google-profil och ett tydligt
-                erbjudande betyder för små företag. Nu lär jag mig verktygen för att hjälpa dem på riktigt.</p>
-        </section>
+                    <!-- 3 Fördelsikoner i rad (Inspirerade av referensbild 1) -->
+                    <div class="hero-fordelar">
+                        <div class="fordel-post">
+                            <span class="fordel-ikon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                            </span>
+                            <span class="fordel-text">DIGITAL STRATEGI</span>
+                        </div>
+                        <div class="fordel-post">
+                            <span class="fordel-ikon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8">
+                                    <circle cx="11" cy="11" r="8" />
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                </svg>
+                            </span>
+                            <span class="fordel-text">SYNAS I SÖK</span>
+                        </div>
+                        <div class="fordel-post">
+                            <span class="fordel-ikon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8">
+                                    <path
+                                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                                </svg>
+                            </span>
+                            <span class="fordel-text">MÄTBARA RESULTAT</span>
+                        </div>
+                    </div>
+                </div>
 
-        <section id="erfarenhet">
-            <h2>Arbetslivserfarenhet</h2>
-            <div class="rutnat">
-                <article class="kort erfarenhet-post">
-                    <h3>Liseberg</h3>
-                    <p class="datum">Oktober 2024 – Pågående</p>
-                    <ul>
-                        <li>Arbetar på avdelningen Spel och lyckohjul med fokus på kundbemötande och service.</li>
-                        <li>Välkomnar gästen, sköter om spelen, engagerar besökare, ger instruktioner och delar ut
-                            vinster.</li>
-                        <li>Kassahantering, växling med gäster och avstämning mot centralkassan.</li>
-                    </ul>
-                </article>
-
-                <article class="kort erfarenhet-post">
-                    <h3>Friskis &amp; Svettis</h3>
-                    <p class="datum">Mars 2025 – Pågående</p>
-                    <ul>
-                        <li>Arbetar som receptionist i medlemsservice med fokus på försäljning och att finnas där för
-                            medlemmarna.</li>
-                        <li>Besvarar frågor via telefon och e-post.</li>
-                        <li>Sköter om anläggningarna så att det är rent, snyggt och fräscht för alla medlemmar.</li>
-                    </ul>
-                </article>
-
-                <article class="kort erfarenhet-post">
-                    <h3>ICA Kvantum Hovås</h3>
-                    <p class="datum">December 2020 – Juli 2024</p>
-                    <ul>
-                        <li>Konfektyransvarig under mer än ett års tid: säkerställde kvalitet, planerade inköp,
-                            analyserade försäljning och svinn samt genomförde dagliga kontroller av hygienfaktorer.</li>
-                        <li>Övriga arbetsuppgifter innefattade varuupplock, frontning av kolonial- och frysvaror samt
-                            kassatjänstgöring.</li>
-                    </ul>
-                </article>
+                <!-- Bild bredvid texten i rund ram -->
+                <div class="hero-bild-kolumn">
+                    <div class="hero-ark-ramme">
+                        <img src="img/madeleine-portratt.jpg"
+                            alt="Porträtt på Madeleine Essunger – Digital Marketing Specialist" width="500" height="500"
+                            class="hero-portratt">
+                    </div>
+                    <!-- Flytande IHM-bricka -->
+                    <div class="hero-flytande-bricka">
+                        <img src="img/bild 2.jpeg" alt="IHM Business School logotyp" class="ihm-bricka-logga" width="48"
+                            height="48">
+                        <div>
+                            <p class="bricka-titel">IHM Business School</p>
+                            <p class="bricka-undertitel">Digital Marketing Specialist</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="tjanster">
-            <h2>Vad jag gör</h2>
-            <ul class="rutnat">
-                <li class="kort">
+        <!-- 2 · OM MIG SEKTION (Text och porträtt bredvid varandra, inspirerat av Claire Browne) -->
+        <section id="om" class="om-sektion">
+            <div class="om-container">
+                <!-- Bild bredvid texten i rund ram -->
+                <div class="om-bild-kolumn">
+                    <div class="om-ark-ramme">
+                        <img src="img/bild.jpeg" alt="Madeleine Essunger i Göteborg" width="500" height="500"
+                            class="om-portratt">
+                    </div>
+                    <div class="om-accent-kort">
+                        <span class="om-accent-script">Madeleine</span>
+                        <span class="om-accent-plats">Göteborg, Sverige</span>
+                    </div>
+                </div>
+
+                <div class="om-text-kolumn">
+                    <span class="sektion-eyebrow">BAKGRUND &amp; PASSION</span>
+                    <h2 class="sektion-rubrik">Om mig</h2>
+                    <p class="om-lead">
+                        Jag utbildar mig till Digital Marketing Specialist på IHM Business School och har ett särskilt
+                        intresse för marknadsföring, strategi och kommunikation.
+                    </p>
+                    <p>
+                        Innan utbildningen arbetade jag i butik och såg hur mycket en bra Google-profil och ett tydligt
+                        erbjudande betyder för små företag. Nu lär jag mig verktygen för att hjälpa dem på riktigt.
+                    </p>
+                    <p>
+                        Jag tror på marknadsföring som känns personlig, genomtänkt och relevant – där varje sökord,
+                        inlägg och
+                        nyhetsbrev stärker relationen till kunden och driver mätbar tillväxt.
+                    </p>
+
+                    <!-- Nyckelkompetenser -->
+                    <div class="om-kompetenser">
+                        <span class="kompetens-tagg">Sökmotoroptimering (SEO)</span>
+                        <span class="kompetens-tagg">Google Företagsprofil</span>
+                        <span class="kompetens-tagg">Meta &amp; Sociala Medier</span>
+                        <span class="kompetens-tagg">Innehållsstrategi</span>
+                        <span class="kompetens-tagg">E-postmarknadsföring</span>
+                    </div>
+
+                    <div class="om-kontakt-snabb">
+                        <a href="tel:0706371006" class="om-telefon-lank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            <span>070-637 10 06</span>
+                        </a>
+                        <a href="mailto:madde.essunger@icloud.com" class="om-epost-lank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <span>madde.essunger@icloud.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/madeleine-essunger-0b7719321/" target="_blank"
+                            rel="noopener noreferrer" class="om-linkedin-lank">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 · VAD JAG GÖR / TJÄNSTER (Inspirerat av Aura Studio & Lauren's Treatments) -->
+        <section id="tjanster" class="tjanster-sektion">
+            <div class="sektion-header-center">
+                <span class="sektion-eyebrow">TJÄNSTER &amp; EXPERTIS</span>
+                <h2 class="sektion-rubrik">Vad jag gör</h2>
+                <p class="sektion-underrubrik">
+                    Helhetslösningar inom digital närvaro anpassade för små och medelstora verksamheter.
+                </p>
+            </div>
+
+            <div class="tjanster-rutnat">
+                <article class="kort tjanst-kort">
+                    <div class="tjanst-ikon-cirkel">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                    </div>
+                    <span class="tjanst-nummer">01</span>
                     <h3>Synas i sök</h3>
-                    <p>Sökordsanalys, texter och en Google-profil som lockar till klick.</p>
-                </li>
-                <li class="kort">
-                    <h3>Sociala medier</h3>
-                    <p>Innehållsplan och inlägg som passar din målgrupp och din tid.</p>
-                </li>
-                <li class="kort">
-                    <h3>E-post som säljer</h3>
-                    <p>Nyhetsbrev och enkla automatiska flöden som följer upp nya kunder.</p>
-                </li>
-            </ul>
-        </section>
+                    <p>Sökordsanalys, sökmotoroptimerade texter och en Google-profil som lockar till klick och gör att
+                        lokala kunder hittar dig först.</p>
+                    <ul class="tjanst-punkter">
+                        <li>Google Företagsprofil (GBP)</li>
+                        <li>Lokal sökmotoroptimering (SEO)</li>
+                        <li>Sökords- och konkurrentanalys</li>
+                    </ul>
+                </article>
 
-        <section id="projekt">
-            <h2>Projekt</h2>
-            <div class="rutnat">
-                <article class="kort">
-                    <img src="img/projekt-1.jpg" alt="Skärmbild av ett kafés Google-profil med betyg och öppettider"
-                        width="600" height="400">
-                    <h3>Lokal synlighet för ett kafé</h3>
-                    <p>Kursuppgift: plan för Google-profil och sökord för ett fiktivt kafé i Göteborg.</p>
+                <article class="kort tjanst-kort">
+                    <div class="tjanst-ikon-cirkel">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </div>
+                    <span class="tjanst-nummer">02</span>
+                    <h3>Sociala medier</h3>
+                    <p>Innehållsplan och inlägg som passar din målgrupp och din tid – med fokus på varumärkeskännedom
+                        och engagemang.</p>
+                    <ul class="tjanst-punkter">
+                        <li>Månadsvisa innehållskalendrar</li>
+                        <li>Visuellt material &amp; texter</li>
+                        <li>Målgruppsanpassad tonalitet</li>
+                    </ul>
                 </article>
-                <article class="kort">
-                    <img src="img/projekt-2.jpg" alt="Innehållskalender för en månad med inlägg markerade per kanal"
-                        width="600" height="400">
-                    <h3>Innehållsplan för en månad</h3>
-                    <p>Kursuppgift: pelare, kanaler och tolv inlägg för en hållbar kaffeprenumeration.</p>
-                </article>
-                <article class="kort">
-                    <img src="img/projekt-3.jpg" alt="Den här webbplatsen i mobilvy" width="600" height="400">
-                    <h3>Den här sajten</h3>
-                    <p>Handkodad med HTML, CSS och JavaScript, med AI som kodstöd.</p>
+
+                <article class="kort tjanst-kort">
+                    <div class="tjanst-ikon-cirkel">
+                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </div>
+                    <span class="tjanst-nummer">03</span>
+                    <h3>E-post som säljer</h3>
+                    <p>Nyhetsbrev och enkla automatiska flöden som följer upp nya kunder och bygger långsiktiga
+                        relationer som ökar försäljningen.</p>
+                    <ul class="tjanst-punkter">
+                        <li>Automatiserade välkomstflöden</li>
+                        <li>Säljande kampanjbrev</li>
+                        <li>Segmentering och analys</li>
+                    </ul>
                 </article>
             </div>
         </section>
 
-        <section id="kontakt">
-            <h2>Kontakt</h2>
-            <p>Vill du veta mer? Mejla mig eller hör av dig på LinkedIn.</p>
-            <p><a href="mailto:madde.essunger@icloud.com">madde.essunger@icloud.com</a></p>
-            <p><a href="https://www.linkedin.com/in/madeleine-essunger-0b7719321//" target="_blank"
-                    rel="noopener">Madeleine Essunger på LinkedIn</a></p>
+        <!-- 4 · ARBETSLIVSERFARENHET -->
+        <section id="erfarenhet" class="erfarenhet-sektion">
+            <div class="sektion-header-center">
+                <span class="sektion-eyebrow">ERFARENHET &amp; KUNDFOKUS</span>
+                <h2 class="sektion-rubrik">Arbetslivserfarenhet</h2>
+                <p class="sektion-underrubrik">
+                    Gedigen praktisk erfarenhet av kundservice, ansvarstagande och kommunikation.
+                </p>
+            </div>
+
+            <div class="rutnat">
+                <!-- 1. Friskis & Svettis (Mars 2025 – Pågående) -->
+                <article class="kort erfarenhet-post">
+                    <div class="erfarenhet-huvud">
+                        <div>
+                            <h3>Friskis &amp; Svettis</h3>
+                            <p class="erfarenhet-roll">Receptionist i medlemsservice</p>
+                        </div>
+                        <span class="datum">Mar 2025 – Pågående</span>
+                    </div>
+                    <ul>
+                        <li>Receptionist i medlemsservice.</li>
+                        <li>Försäljning.</li>
+                        <li>Svara i telefon och på mail.</li>
+                        <li>Sköta om anläggningarna så det ser snyggt och fräscht ut så medlemmar trivs.</li>
+                    </ul>
+                </article>
+
+                <!-- 2. Liseberg (Oktober 2024 – Oktober 2026) -->
+                <article class="kort erfarenhet-post">
+                    <div class="erfarenhet-huvud">
+                        <div>
+                            <h3>Liseberg</h3>
+                            <p class="erfarenhet-roll">Spel och lyckohjul</p>
+                        </div>
+                        <span class="datum">Okt 2024 – Okt 2026</span>
+                    </div>
+                    <ul>
+                        <li>Arbetade på avdelning -Spel och lyckohjul.</li>
+                        <li>Fokus på kundservice.</li>
+                        <li>Ge gäster en bra kundupplevelse med bra bemötande.</li>
+                        <li>Försäljning.</li>
+                        <li>Räkna kassa och växla pengar.</li>
+                    </ul>
+                </article>
+
+                <!-- 3. ICA Kvantum Hovås (December 2020 – Juli 2024) -->
+                <article class="kort erfarenhet-post">
+                    <div class="erfarenhet-huvud">
+                        <div>
+                            <h3>ICA Kvantum Hovås</h3>
+                            <p class="erfarenhet-roll">Konfektyransvarig</p>
+                        </div>
+                        <span class="datum">Dec 2020 – Jul 2024</span>
+                    </div>
+                    <ul>
+                        <li>Konfektyransvarig.</li>
+                        <li>Ansvarsområdet bestod av att säkerställa kvalitet, planering av inköp, analys av
+                            försäljning/svinn samt en daglig kontroll av hygienfaktorer.</li>
+                        <li>Varuupplock, frontning av kolonial/frysvaror.</li>
+                        <li>Kassatjänstgöring.</li>
+                    </ul>
+                </article>
+            </div>
+
+            <!-- Utbildning från CV -->
+            <div class="utbildning-container">
+                <article class="kort utbildning-kort-stor">
+                    <div class="utbildning-huvud">
+                        <div class="utbildning-rubrik-grupp">
+                            <span class="utbildning-ikon" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="utbildning-undertitel">AKADEMISK BAKGRUND</span>
+                                <h3 class="utbildning-rubrik">Utbildning</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="utbildning-rutnat">
+                        <div class="utbildning-post">
+                            <div class="utbildning-post-topp">
+                                <span class="utbildning-datum">2026 – 2028</span>
+                                <span class="utbildning-status">Pågående</span>
+                            </div>
+                            <h4 class="utbildning-roll">Digital Marketing Specialist</h4>
+                            <p class="utbildning-skola">IHM Business School Göteborg</p>
+                        </div>
+
+                        <div class="utbildning-post">
+                            <div class="utbildning-post-topp">
+                                <span class="utbildning-datum">2018 – 2021</span>
+                                <span class="utbildning-status examen">Avslutad</span>
+                            </div>
+                            <h4 class="utbildning-roll">Ekonomiprogrammet</h4>
+                            <p class="utbildning-skola">Hvitfeldtska gymnasiet</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 5 · PROJEKT (Inspirerat av portföljerna i referensbilderna) -->
+        <section id="projekt" class="projekt-sektion">
+            <div class="sektion-header-center">
+                <span class="sektion-eyebrow">PORTFOLIO &amp; ARBETEN</span>
+                <h2 class="sektion-rubrik">Utvalda projekt</h2>
+                <p class="sektion-underrubrik">
+                    Praktiska case från utbildningen och digitala projekt.
+                </p>
+            </div>
+
+            <div class="rutnat projekt-rutnat">
+                <article class="kort projekt-kort">
+                    <div class="projekt-bild-ramme">
+                        <img src="img/projekt-1.jpg" alt="Skärmbild av ett kafés Google-profil med betyg och öppettider"
+                            width="600" height="400" class="projekt-bild" loading="lazy">
+                        <span class="projekt-kategori">Lokal SEO</span>
+                    </div>
+                    <div class="projekt-innehall">
+                        <h3>Lokal synlighet för ett kafé</h3>
+                        <p>Kursuppgift: Komplett plan för Google-profil, lokal sökordsstrategi och optimering för ett
+                            fiktivt kafé i Göteborg.</p>
+                    </div>
+                </article>
+
+                <article class="kort projekt-kort">
+                    <div class="projekt-bild-ramme">
+                        <img src="img/sjuharads-skafferi.jpg"
+                            alt="Ettårig marknadsplan för Sjuhärads Skafferi AB med produktförpackning och Instagram-feed"
+                            width="600" height="400" class="projekt-bild" loading="lazy">
+                        <span class="projekt-kategori">Marknadsplan</span>
+                    </div>
+                    <div class="projekt-innehall">
+                        <h3>Ettårig marknadsplan för Sjuhärads Skafferi</h3>
+                        <p>Ettårig marknadsplan med innehåll av nulägesanalys, marknadsstrategi, mål, målgruppsval,
+                            budget, aktivitetsplan och uppföljning.</p>
+                    </div>
+                </article>
+
+                <article class="kort projekt-kort">
+                    <div class="projekt-bild-ramme">
+                        <img src="img/webb-och-design.jpg"
+                            alt="Den här webbplatsen visad på surfplatta och mobil med anteckningsblock och visitkort"
+                            width="600" height="400" class="projekt-bild" loading="lazy">
+                        <span class="projekt-kategori">Webb &amp; Design</span>
+                    </div>
+                    <div class="projekt-innehall">
+                        <h3>Den här sajten</h3>
+                        <p>Handkodad responsiv webbplats med HTML, CSS och JavaScript, med AI som kodstöd och fokus på
+                            modern estetik.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 6 · KONTAKT & KONTAKTFORMULÄR (Med telefonnummer 0706371006 och relevant kontaktformulär) -->
+        <section id="kontakt" class="kontakt-sektion">
+            <div class="kontakt-grid">
+                <!-- Vänster kolumn: Kontaktinformation & Telefonnummer -->
+                <div class="kontakt-info-kolumn">
+                    <span class="sektion-eyebrow">TA KONTAKT</span>
+                    <h2 class="sektion-rubrik">Låt oss prata digital tillväxt</h2>
+                    <p class="kontakt-lead">
+                        Vill du veta mer, diskutera ett samarbete eller boka ett förutsättningslöst samtal? Hör av dig
+                        via formuläret, telefon eller mejl.
+                    </p>
+
+                    <div class="kontakt-uppgifter-lista">
+                        <!-- Telefonnummer 0706371006 -->
+                        <a href="tel:0706371006" class="kontakt-post-kort">
+                            <span class="kontakt-post-ikon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="kontakt-post-etikett">Telefon</span>
+                                <span class="kontakt-post-varde">070-637 10 06</span>
+                            </div>
+                        </a>
+
+                        <!-- E-post -->
+                        <a href="mailto:madde.essunger@icloud.com" class="kontakt-post-kort">
+                            <span class="kontakt-post-ikon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="kontakt-post-etikett">E-post</span>
+                                <span class="kontakt-post-varde">madde.essunger@icloud.com</span>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/madeleine-essunger-0b7719321/" target="_blank"
+                            rel="noopener noreferrer" class="kontakt-post-kort">
+                            <span class="kontakt-post-ikon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                    <rect x="2" y="9" width="4" height="12" />
+                                    <circle cx="4" cy="4" r="2" />
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="kontakt-post-etikett">LinkedIn</span>
+                                <span class="kontakt-post-varde">Madeleine Essunger på LinkedIn</span>
+                            </div>
+                        </a>
+
+                        <!-- Plats -->
+                        <div class="kontakt-post-kort">
+                            <span class="kontakt-post-ikon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="kontakt-post-etikett">Plats</span>
+                                <span class="kontakt-post-varde-text">Göteborg, Sverige</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Höger kolumn: Kontaktformulär för digital marknadsföring -->
+                <div class="kontakt-formular-kort">
+                    <h3 class="form-rubrik">Skicka en förfrågan</h3>
+                    <p class="form-underrubrik">
+                        Fyll i dina uppgifter och vad du vill ha hjälp med inom digital marknadsföring.
+                    </p>
+
+                    <form id="kontakt-formular" class="kontakt-formular">
+                        <div class="form-rad-tva">
+                            <div class="form-grupp">
+                                <label for="form-namn">Ditt namn <span class="kravt-marke"
+                                        aria-hidden="true">*</span></label>
+                                <input type="text" id="form-namn" name="namn" placeholder="Madeleine Andersson"
+                                    required>
+                            </div>
+                            <div class="form-grupp">
+                                <label for="form-foretag">Företag / Organisation</label>
+                                <input type="text" id="form-foretag" name="foretag"
+                                    placeholder="Företagsnamn (valfritt)">
+                            </div>
+                        </div>
+
+                        <div class="form-rad-tva">
+                            <div class="form-grupp">
+                                <label for="form-epost">E-postadress <span class="kravt-marke"
+                                        aria-hidden="true">*</span></label>
+                                <input type="email" id="form-epost" name="epost" placeholder="din.epost@foretag.se"
+                                    required>
+                            </div>
+                            <div class="form-grupp">
+                                <label for="form-telefon">Telefonnummer</label>
+                                <input type="tel" id="form-telefon" name="telefon" placeholder="070-123 45 67">
+                            </div>
+                        </div>
+
+                        <!-- Vad vill du ha hjälp med inom digital marknadsföring -->
+                        <div class="form-grupp">
+                            <label for="form-tjanst">Vad vill du ha hjälp med inom digital marknadsföring? <span
+                                    class="kravt-marke" aria-hidden="true">*</span></label>
+                            <select id="form-tjanst" name="tjanst" required>
+                                <option value="" disabled selected>Välj ett område...</option>
+                                <option value="seo">Synas i sök &amp; Google Företagsprofil (SEO)</option>
+                                <option value="sociala-medier">Sociala medier &amp; Innehållsstrategi</option>
+                                <option value="epost">E-postmarknadsföring &amp; Nyhetsbrev</option>
+                                <option value="helhet">Helhetsstrategi för digital synlighet</option>
+                                <option value="samarbete">LIA / Praktik / Rekrytering</option>
+                                <option value="annat">Annat (beskriv i meddelandet)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-grupp">
+                            <label for="form-meddelande">Berätta kort om dina behov <span class="kravt-marke"
+                                    aria-hidden="true">*</span></label>
+                            <textarea id="form-meddelande" name="meddelande" rows="4"
+                                placeholder="Beskriv kort vad du vill uppnå, eventuell tidsram och vad du önskar hjälp med..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="knapp knapp-primar form-skicka-knapp">
+                            <span>Skicka meddelande</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <line x1="22" y1="2" x2="11" y2="13" />
+                                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                            </svg>
+                        </button>
+
+                        <div id="form-bekraftelse" class="form-bekraftelse" hidden role="alert">
+                            <div class="bekraftelse-innehall">
+                                <span class="bekraftelse-ikon" aria-hidden="true">✓</span>
+                                <div>
+                                    <p class="bekraftelse-titel">Tack för ditt meddelande!</p>
+                                    <p class="bekraftelse-text">Jag har mottagit din förfrågan och återkommer till dig
+                                        så snart som möjligt.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>© 2026 Madeleine Essunger · Byggd för hand med HTML, CSS och JavaScript</p>
+    <footer class="sidfot">
+        <div class="sidfot-innehall">
+            <div class="sidfot-brand">
+                <div class="sidfot-emblem" aria-hidden="true">
+                    <img src="img/logotyp-me.svg" alt="" width="52" height="52" class="sidfot-emblem-bild">
+                </div>
+                <span class="sidfot-script">Madeleine</span>
+                <span class="sidfot-sub">ESSUNGER</span>
+                <p class="sidfot-tagline">Digital Marketing Specialist i Göteborg</p>
+            </div>
+            <div class="sidfot-kontakt-snabb">
+                <a href="tel:0706371006">070-637 10 06</a>
+                <span>&bull;</span>
+                <a href="mailto:madde.essunger@icloud.com">madde.essunger@icloud.com</a>
+                <span>&bull;</span>
+                <a href="https://www.linkedin.com/in/madeleine-essunger-0b7719321/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <p class="sidfot-copyright">© 2026 Madeleine Essunger · Byggd för hand med HTML, CSS och JavaScript</p>
+        </div>
     </footer>
 </body>
 

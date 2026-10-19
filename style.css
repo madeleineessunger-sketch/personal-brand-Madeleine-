@@ -1,60 +1,110 @@
-/* 1 · Box-modellen: bredden gäller hela lådan */
+/* =============================================================
+   MADELEINE ESSUNGER · DIGITAL MARKETING SPECIALIST
+   Designsystem: Varm beige, pudrig terrakotta-rosa & editorial elegans
+   Inspirerat av: Lauren's Aesthetics, Claire Browne & Aura Studio
+============================================================= */
+
+/* 1 · Reset & Box-modell */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* 2 · Varumärket som variabler */
-:root {
-    --text: #1f2430;
-    --yta: #ffffff;
-    --yta-2: #f3f1ec;
-    --kant: #e2ded5;
-    --primar: #1d4e89;
-    --accent: #f6b3ef;
-    --knapptext: #1f2430;
-    --luft: 1rem;
-    --radie: 12px;
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 105px;
 }
 
-/* 3 · Grundstil */
+/* 2 · Design-variabler (Ljust läge: Beige, Rosa, Svart & Vit text) */
+:root {
+    /* Färger */
+    --bg-huvud: #FAF6F0;           /* Varm ljus beige grund */
+    --bg-yta: #F4EFEA;             /* Mjuk sand- och linnebeige för sektioner */
+    --bg-kort: #FFFFFF;            /* Kripsigt vitt för kort & formulär */
+    --bg-kort-hover: #FFFDFB;
+    --kant: #EDE4DC;               /* Subtila, eleganta ramlinjer */
+    --kant-stark: #DECFC3;
+
+    /* Rosa / Terrakotta accenter */
+    --accent: #BE8280;             /* Dämpad terrakotta / dammig rosa */
+    --accent-hover: #AB706E;       /* Djupare ton vid hovring */
+    --accent-ljus: #F7EDE8;        /* Ljus puderrosa för brickor & ikoner */
+    --accent-guld: #B17B6A;        /* Varm script-ton */
+
+    /* Textkontrast */
+    --text-huvud: #221E1C;         /* Svart/espresso text för skarp läsbarhet */
+    --text-muted: #6B615A;         /* Dämpad mörkgrå/brun för brödtext */
+    --text-ljus: #FFFFFF;          /* Vit text på knappar och brickor */
+
+    /* Header & Banner */
+    --header-bg: rgba(250, 246, 240, 0.96);
+    --header-border: #EDE4DC;
+    --header-skugga: 0 4px 20px rgba(34, 30, 28, 0.04);
+    --banner-bg: #F5EFEB;
+    --banner-text: #8E7469;
+
+    /* Typografi & Form */
+    --font-rubrik: 'Cormorant Garamond', Georgia, serif;
+    --font-script: 'Alex Brush', cursive;
+    --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-text: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    --radie-liten: 6px;
+    --radie-kort: 20px;
+    --radie-ark: 200px 200px 28px 28px;
+    --skugga-mjuk: 0 10px 30px rgba(34, 30, 28, 0.05);
+    --skugga-svavande: 0 16px 40px rgba(34, 30, 28, 0.08);
+}
+
+/* 3 · Grundläggande stilar */
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: var(--text);
-    background: var(--yta);
+    font-family: var(--font-text);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-huvud);
+    background-color: var(--bg-huvud);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    -webkit-font-smoothing: antialiased;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
+    color: var(--text-huvud);
     line-height: 1.2;
-    color: var(--primar);
+    margin-top: 0;
 }
 
 h1 {
     font-size: 2rem;
-    margin: 0;
 }
 
 h2 {
-    font-size: 1.75rem;
-    margin-top: 0;
+    font-family: var(--font-rubrik);
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-family: var(--font-rubrik);
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
 p {
-    max-width: 65ch;
+    color: var(--text-muted);
+    margin-top: 0;
+    margin-bottom: 1.25rem;
 }
 
 a {
-    color: var(--primar);
+    color: var(--text-huvud);
+    text-decoration: none;
+    transition: all 0.25s ease;
 }
 
 img {
@@ -63,172 +113,1722 @@ img {
     display: block;
 }
 
-/* 4 · Sidhuvud och meny */
+/* Allmänna återanvändbara klasser */
+.sektion-eyebrow {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.sektion-rubrik {
+    font-family: var(--font-rubrik);
+    font-size: 2.75rem;
+    font-weight: 600;
+    color: var(--text-huvud);
+    margin-bottom: 0.85rem;
+}
+
+.sektion-underrubrik {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sektion-header-center {
+    text-align: center;
+    max-width: 65ch;
+    margin: 0 auto 3.5rem auto;
+}
+
+/* Knappar */
+.knapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.85rem 1.75rem;
+    border-radius: var(--radie-liten);
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.knapp-primar {
+    background-color: var(--accent);
+    color: var(--text-ljus) !important;
+    box-shadow: 0 4px 14px rgba(190, 130, 128, 0.28);
+}
+
+.knapp-primar:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(190, 130, 128, 0.38);
+}
+
+.knapp-sekundar {
+    background-color: transparent;
+    color: var(--text-huvud);
+    border: 1px solid var(--kant-stark);
+}
+
+.knapp-sekundar:hover {
+    background-color: var(--bg-kort);
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-2px);
+}
+
+/* 4 · Topp-banner */
+.topp-banner {
+    background-color: var(--banner-bg);
+    color: var(--banner-text);
+    border-bottom: 1px solid var(--kant);
+    padding: 0.55rem 1rem;
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.topp-banner-innehall {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    max-width: 78rem;
+    margin: 0 auto;
+}
+
+.topp-punkt {
+    opacity: 0.45;
+    font-size: 0.65rem;
+}
+
+/* 5 · Huvudsidhuvud & Navigering */
 .sidhuvud {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--header-border);
+    box-shadow: var(--header-skugga);
+    padding: 0.85rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.sidhuvud-innehall {
+    max-width: 78rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Varumärke & Logotyp */
+.varumarke {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--luft);
-    padding: calc(var(--luft) * 1.5);
-    background: var(--yta-2);
 }
 
-.roll {
+.varumarke-titel {
     margin: 0;
+    padding: 0;
+    line-height: 1;
 }
 
-nav ul {
+.logotyp {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.95rem;
+    text-decoration: none;
+    line-height: 1;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.logotyp:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+}
+
+/* ME Monogram Emblem */
+.logotyp-emblem {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
     display: flex;
-    flex-wrap: wrap;
-    gap: var(--luft);
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;
+    filter: drop-shadow(0 2px 8px rgba(177, 123, 106, 0.16));
+}
+
+.logotyp:hover .logotyp-emblem {
+    transform: scale(1.06) rotate(4deg);
+    filter: drop-shadow(0 4px 14px rgba(177, 123, 106, 0.28));
+}
+
+.emblem-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.emblem-bokstav-m {
+    font-family: var(--font-rubrik);
+    font-size: 42px;
+    font-weight: 600;
+    fill: url(#emblemGrad);
+    text-anchor: middle;
+}
+
+.emblem-bokstav-e {
+    font-family: var(--font-rubrik);
+    font-size: 42px;
+    font-weight: 400;
+    font-style: italic;
+    fill: var(--text-huvud);
+    text-anchor: middle;
+    transition: fill 0.3s ease;
+}
+
+.logotyp-me-text {
+    font-family: var(--font-rubrik);
+    font-size: 2.15rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: var(--text-huvud);
+    line-height: 1;
+    transition: color 0.25s ease;
+}
+
+.logotyp:hover .logotyp-me-text {
+    color: var(--accent);
+}
+
+/* Navigeringsmeny */
+.huvudmeny {
+    display: flex;
+    align-items: center;
+    gap: 2.25rem;
+}
+
+.nav-lankar {
+    display: flex;
+    align-items: center;
+    gap: 1.85rem;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-nav a {
-    font-weight: 600;
+.nav-lankar a {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-huvud);
     text-decoration: none;
+    padding: 0.4rem 0;
+    position: relative;
+    transition: color 0.25s ease;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.nav-lankar a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--accent);
+    transition: width 0.25s ease;
 }
 
-/* 5 · Innehållsytan */
+.nav-lankar a:hover {
+    color: var(--accent);
+}
+
+.nav-lankar a:hover::after {
+    width: 100%;
+}
+
+@media (min-width: 62rem) {
+    .nav-kontakt-mobil {
+        display: none;
+    }
+}
+
+/* Åtgärder till höger */
+.header-handlingar {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.header-cta-knapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent);
+    color: var(--text-ljus) !important;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    padding: 0.72rem 1.5rem;
+    border-radius: var(--radie-liten);
+    box-shadow: 0 4px 14px rgba(190, 130, 128, 0.25);
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.header-cta-knapp:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(190, 130, 128, 0.35);
+}
+
+.header-social-lank {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--kant);
+    color: var(--text-huvud);
+    background-color: var(--bg-kort);
+    text-decoration: none;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+.header-social-lank:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(177, 123, 106, 0.2);
+}
+
+.header-social-lank .header-social-text {
+    display: none;
+}
+
+.tema-knapp,
+#tema {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid var(--kant);
+    border-radius: var(--radie-liten);
+    padding: 0.6rem 0.95rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.tema-knapp:hover,
+#tema:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Mobilknapp (Hamburgare) */
+.meny-knapp {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    background: transparent;
+    border: 1px solid var(--kant);
+    border-radius: var(--radie-liten);
+    padding: 0;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.meny-knapp:hover {
+    border-color: var(--accent);
+}
+
+.meny-linje {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--text-huvud);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.meny-knapp.aktiv .meny-linje:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.meny-knapp.aktiv .meny-linje:nth-child(2) {
+    opacity: 0;
+}
+
+.meny-knapp.aktiv .meny-linje:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* 6 · Huvudinnehåll & Sektionslayout */
 main {
-    max-width: 70rem;
-    margin: 0 auto;
-    padding: 0 calc(var(--luft) * 1.5);
+    width: 100%;
 }
 
 section {
-    padding: calc(var(--luft) * 3) 0;
+    padding: 5.5rem 1.5rem;
 }
 
-.knapp {
-    display: inline-block;
-    padding: 0.75rem 1.25rem;
-    background: var(--accent);
-    color: var(--knapptext);
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: var(--radie);
+/* 7 · HERO-SEKTION (Bild & text bredvid varandra) */
+.hero-sektion {
+    background: linear-gradient(180deg, var(--bg-huvud) 0%, var(--bg-yta) 100%);
+    padding-top: 4rem;
+    padding-bottom: 5.5rem;
 }
 
-/* 6 · Kort i ett rutnät */
-.rutnat {
+.hero-container {
+    max-width: 78rem;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: calc(var(--luft) * 1.5);
-    list-style: none;
-    padding: 0;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4rem;
+    align-items: center;
 }
 
-.kort {
-    background: var(--yta-2);
-    padding: calc(var(--luft) * 1.5);
+.hero-rubrik {
+    font-family: var(--font-rubrik);
+    font-size: 3.85rem;
+    font-weight: 600;
+    line-height: 1.08;
+    color: var(--text-huvud);
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.015em;
+}
+
+.hero-rubrik-kursiv {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 400;
+}
+
+.hero-ingress {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    max-width: 52ch;
+    margin-bottom: 2.25rem;
+}
+
+.hero-knapp-grupp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3.25rem;
+}
+
+/* 3 Fördelar under hero-knapparna */
+.hero-fordelar {
+    display: flex;
+    align-items: center;
+    gap: 2.25rem;
+    flex-wrap: wrap;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--kant);
+}
+
+.fordel-post {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.fordel-ikon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+}
+
+.fordel-text {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* Porträttbild i Rund ram */
+.hero-bild-kolumn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-ark-ramme {
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--skugga-svavande);
+    border: 6px solid #FFFFFF;
+    background-color: var(--bg-kort);
+}
+
+.hero-portratt {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.hero-ark-ramme:hover .hero-portratt {
+    transform: scale(1.03);
+}
+
+/* Flytande bricka med IHM-logga */
+.hero-flytande-bricka {
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--kant);
-    border-radius: var(--radie);
+    border-radius: 50px;
+    padding: 0.65rem 1.4rem 0.65rem 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    box-shadow: 0 12px 30px rgba(34, 30, 28, 0.1);
+    animation: floatBadge 4s ease-in-out infinite alternate;
 }
 
-.kort h3 {
-    margin-top: 0;
+@keyframes floatBadge {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-6px); }
 }
 
-.kort img {
-    border-radius: calc(var(--radie) / 2);
-    margin-bottom: var(--luft);
+.ihm-bricka-logga {
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 6.5 · Arbetslivserfarenhet */
-.erfarenhet-lista {
+.bricka-titel {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-huvud);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.bricka-undertitel {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin: 0;
+    letter-spacing: 0.04em;
+}
+
+/* 8 · OM MIG SEKTION (Inspirerat av Claire Browne) */
+.om-sektion {
+    background-color: var(--bg-kort);
+}
+
+.om-container {
+    max-width: 78rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 4.5rem;
+    align-items: center;
+}
+
+.om-bild-kolumn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.om-ark-ramme {
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--skugga-svavande);
+    border: 6px solid #FFFFFF;
+    background-color: var(--bg-kort);
+}
+
+.om-portratt {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 85%;
+    transform: scale(1.24);
+    transform-origin: 50% 55%;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.om-ark-ramme:hover .om-portratt {
+    transform: scale(1.29);
+}
+
+.om-accent-kort {
+    position: absolute;
+    bottom: 10px;
+    right: 0px;
+    background-color: var(--bg-huvud);
+    border: 1px solid var(--kant);
+    border-radius: 12px;
+    padding: 0.85rem 1.4rem;
     display: flex;
     flex-direction: column;
-    gap: calc(var(--luft) * 1.5);
+    align-items: center;
+    box-shadow: var(--skugga-mjuk);
+}
+
+.om-accent-script {
+    font-family: var(--font-script);
+    font-size: 2.1rem;
+    color: var(--accent-guld);
+    line-height: 1;
+}
+
+.om-accent-plats {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.om-lead {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text-huvud);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.om-kompetenser {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 2rem 0;
+}
+
+.kompetens-tagg {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-yta);
+    color: var(--text-huvud);
+    border: 1px solid var(--kant);
+    border-radius: 30px;
+}
+
+.om-kontakt-snabb {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--kant);
+}
+
+.om-telefon-lank,
+.om-epost-lank,
+.om-linkedin-lank {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.om-telefon-lank:hover,
+.om-epost-lank:hover,
+.om-linkedin-lank:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+
+/* 9 · VAD JAG GÖR / TJÄNSTER (Inspirerat av Aura Studio) */
+.tjanster-sektion {
+    background-color: var(--bg-yta);
+}
+
+.tjanster-rutnat {
+    max-width: 78rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.tjanst-kort {
+    position: relative;
+    background-color: var(--bg-kort);
+    border: 1px solid var(--kant);
+    border-radius: var(--radie-kort);
+    padding: 2.75rem 2.25rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--skugga-mjuk);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tjanst-kort:hover {
+    transform: translateY(-6px);
+    border-color: var(--kant-stark);
+    box-shadow: var(--skugga-svavande);
+}
+
+.tjanst-ikon-cirkel {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: var(--accent-ljus);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.75rem;
+}
+
+.tjanst-nummer {
+    position: absolute;
+    top: 2rem;
+    right: 2.25rem;
+    font-family: var(--font-rubrik);
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--kant-stark);
+}
+
+.tjanst-kort h3 {
+    margin-bottom: 0.85rem;
+}
+
+.tjanst-punkter {
+    margin: 1.5rem 0 0 0;
+    padding: 1.25rem 0 0 0;
+    border-top: 1px dashed var(--kant);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.tjanst-punkter li {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    position: relative;
+    padding-left: 1.25rem;
+}
+
+.tjanst-punkter li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* 10 · ARBETSLIVSERFARENHET */
+.erfarenhet-sektion {
+    background-color: var(--bg-huvud);
+}
+
+.rutnat {
+    max-width: 78rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
 }
 
 .erfarenhet-post {
-    background: var(--yta-2);
-    padding: calc(var(--luft) * 1.5);
+    background-color: var(--bg-kort);
     border: 1px solid var(--kant);
-    border-radius: var(--radie);
+    border-radius: var(--radie-kort);
+    padding: 2.25rem;
+    box-shadow: var(--skugga-mjuk);
+    transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-.erfarenhet-post h3 {
-    margin: 0 0 0.25rem 0;
+.erfarenhet-post:hover {
+    transform: translateY(-4px);
+    border-color: var(--kant-stark);
+}
+
+.erfarenhet-huvud {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--kant);
+}
+
+.erfarenhet-huvud h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.erfarenhet-roll {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-huvud);
+    margin: 0.25rem 0 0 0;
 }
 
 .datum {
-    font-size: 0.95rem;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
     font-weight: 600;
-    color: var(--primar);
-    margin: 0 0 var(--luft) 0;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    background-color: var(--accent-ljus);
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    white-space: nowrap;
 }
 
 .erfarenhet-post ul {
     margin: 0;
-    padding-left: 1.25rem;
+    padding-left: 1.2rem;
 }
 
 .erfarenhet-post li {
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
 }
 
 .erfarenhet-post li:last-child {
     margin-bottom: 0;
 }
 
-/* 7 · Knappar och fokus */
-button {
-    font: inherit;
-    padding: 0.6rem 1.1rem;
-    color: var(--primar);
-    background: var(--yta);
-    border: 2px solid var(--primar);
-    border-radius: var(--radie);
+/* Utbildning från CV (Förstorad sektion) */
+.utbildning-container {
+    max-width: 78rem;
+    margin: 2.5rem auto 0 auto;
+    width: 100%;
+}
+
+.utbildning-kort-stor {
+    background-color: var(--bg-kort);
+    border: 1px solid var(--kant);
+    border-radius: var(--radie-kort);
+    padding: 2.5rem 3rem;
+    box-shadow: var(--skugga-mjuk);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.utbildning-kort-stor:hover {
+    transform: translateY(-3px);
+    border-color: var(--kant-stark);
+    box-shadow: var(--skugga-kort);
+}
+
+.utbildning-huvud {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--kant);
+    margin-bottom: 1.75rem;
+}
+
+.utbildning-rubrik-grupp {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.utbildning-ikon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(184, 137, 137, 0.12);
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.utbildning-undertitel {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+}
+
+.utbildning-rubrik {
+    font-family: var(--font-rubrik);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-huvud);
+    margin: 0;
+}
+
+.utbildning-rutnat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem;
+}
+
+.utbildning-post {
+    background-color: var(--bg-yta);
+    border: 1px solid var(--kant);
+    border-radius: calc(var(--radie-kort) - 4px);
+    padding: 1.75rem 2rem;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.utbildning-post:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.utbildning-post-topp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.85rem;
+}
+
+.utbildning-datum {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    background-color: rgba(184, 137, 137, 0.12);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+}
+
+.utbildning-status {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.utbildning-status.examen {
+    color: var(--text-muted);
+}
+
+.utbildning-roll {
+    font-family: var(--font-rubrik);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-huvud);
+    margin: 0 0 0.4rem 0;
+    line-height: 1.3;
+}
+
+.utbildning-skola {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+@media (max-width: 50rem) {
+    .utbildning-kort-stor {
+        padding: 1.75rem 1.5rem;
+    }
+
+    .utbildning-rutnat {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .utbildning-rubrik-grupp {
+        gap: 1rem;
+    }
+
+    .utbildning-rubrik {
+        font-size: 1.6rem;
+    }
+}
+
+/* 11 · PROJEKT (Portfölj med genererade bilder) */
+.projekt-sektion {
+    background-color: var(--bg-yta);
+}
+
+.projekt-rutnat {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.projekt-kort {
+    background-color: var(--bg-kort);
+    border: 1px solid var(--kant);
+    border-radius: var(--radie-kort);
+    overflow: hidden;
+    padding: 0;
+    box-shadow: var(--skugga-mjuk);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projekt-kort:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--skugga-svavande);
+}
+
+.projekt-bild-ramme {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background-color: var(--bg-yta);
+}
+
+.projekt-bild {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.projekt-kort:hover .projekt-bild {
+    transform: scale(1.04);
+}
+
+.projekt-kategori {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--kant);
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
+}
+
+.projekt-innehall {
+    padding: 1.85rem 2rem 2.25rem 2rem;
+}
+
+.projekt-innehall h3 {
+    margin-bottom: 0.65rem;
+}
+
+.projekt-innehall p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* 12 · KONTAKT & FORMULÄR (Telefon 0706371006 + Kontaktformulär) */
+.kontakt-sektion {
+    background: linear-gradient(180deg, var(--bg-huvud) 0%, var(--bg-yta) 100%);
+    padding-bottom: 6rem;
+}
+
+.kontakt-grid {
+    max-width: 78rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 4.5rem;
+    align-items: flex-start;
+}
+
+.kontakt-lead {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+.kontakt-uppgifter-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.kontakt-post-kort {
+    background-color: var(--bg-kort);
+    border: 1px solid var(--kant);
+    border-radius: 14px;
+    padding: 1.15rem 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    box-shadow: 0 4px 16px rgba(34, 30, 28, 0.03);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kontakt-post-kort:hover {
+    transform: translateX(4px);
+    border-color: var(--kant-stark);
+}
+
+a.kontakt-post-kort {
+    text-decoration: none;
+    color: inherit;
     cursor: pointer;
 }
 
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--primar);
-    outline-offset: 3px;
+a.kontakt-post-kort:hover {
+    border-color: var(--accent);
+    box-shadow: 0 6px 20px rgba(177, 123, 106, 0.12);
 }
 
-footer {
-    padding: calc(var(--luft) * 2);
+a.kontakt-post-kort:hover .kontakt-post-varde {
+    color: var(--accent);
+}
+
+a.kontakt-post-kort:hover .kontakt-post-ikon {
+    background-color: var(--accent);
+    color: #ffffff;
+}
+
+.kontakt-post-ikon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: var(--accent-ljus);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.kontakt-post-etikett {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+}
+
+.kontakt-post-varde {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-huvud);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.kontakt-post-varde:hover {
+    color: var(--accent);
+}
+
+.kontakt-post-varde-text {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--text-huvud);
+}
+
+/* Formulärkort */
+.kontakt-formular-kort {
+    background-color: var(--bg-kort);
+    border: 1px solid var(--kant);
+    border-radius: var(--radie-kort);
+    padding: 3rem 2.75rem;
+    box-shadow: var(--skugga-svavande);
+}
+
+.form-rubrik {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-underrubrik {
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.kontakt-formular {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-rad-tva {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.form-grupp {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.form-grupp label {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-huvud);
+}
+
+.kravt-marke {
+    color: var(--accent);
+}
+
+.form-grupp input,
+.form-grupp select,
+.form-grupp textarea {
+    font-family: var(--font-text);
+    font-size: 0.95rem;
+    padding: 0.85rem 1.1rem;
+    border: 1px solid var(--kant);
+    border-radius: var(--radie-liten);
+    background-color: var(--bg-huvud);
+    color: var(--text-huvud);
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.form-grupp input:focus,
+.form-grupp select:focus,
+.form-grupp textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(190, 130, 128, 0.15);
+}
+
+.form-grupp textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.form-skicka-knapp {
+    width: 100%;
+    margin-top: 0.75rem;
+    padding: 1rem 2rem;
+    font-size: 0.85rem;
+}
+
+.form-bekraftelse {
+    margin-top: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background-color: #F1F8F1;
+    border: 1px solid #C8E6C9;
+    border-radius: var(--radie-liten);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bekraftelse-innehall {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.bekraftelse-ikon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #2E7D32;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.bekraftelse-titel {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    color: #1B5E20;
+    margin: 0 0 0.25rem 0;
+    font-size: 0.95rem;
+}
+
+.bekraftelse-text {
+    color: #2E7D32;
+    margin: 0;
+    font-size: 0.88rem;
+}
+
+/* 13 · Sidfot */
+.sidfot {
+    background-color: var(--bg-yta);
+    border-top: 1px solid var(--kant);
+    padding: 4rem 1.5rem 3rem 1.5rem;
     text-align: center;
-    background: var(--yta-2);
 }
 
-footer p {
+.sidfot-innehall {
+    max-width: 78rem;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-/* 8 · Större skärmar */
-@media (min-width: 48rem) {
+.sidfot-script {
+    font-family: var(--font-script);
+    font-size: 2.85rem;
+    color: var(--accent-guld);
+    display: block;
+    line-height: 1;
+}
+
+.sidfot-sub {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    color: var(--text-huvud);
+    text-transform: uppercase;
+    display: block;
+    margin-top: 0.15rem;
+}
+
+.sidfot-tagline {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin: 0.4rem 0 0 0;
+}
+
+.sidfot-kontakt-snabb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.sidfot-kontakt-snabb a {
+    color: var(--accent);
+}
+
+.sidfot-kontakt-snabb a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.sidfot-copyright {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* 14 · Responsivitet: Surfplattor och Mobiler */
+@media (max-width: 62rem) {
     .sidhuvud {
-        flex-direction: row;
-        justify-content: space-between;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .meny-knapp {
+        display: flex;
+    }
+
+    .huvudmeny {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-kort);
+        border-bottom: 1px solid var(--kant);
+        box-shadow: 0 14px 30px rgba(34, 30, 28, 0.09);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.25rem;
+        padding: 1.5rem;
+        display: none;
+    }
+
+    .huvudmeny.oppen {
+        display: flex;
+        animation: menyNer 0.22s ease forwards;
+    }
+
+    @keyframes menyNer {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .nav-lankar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .nav-lankar li {
+        width: 100%;
+    }
+
+    .nav-lankar a {
+        display: block;
+        padding: 0.65rem 0;
+        font-size: 0.88rem;
+        border-bottom: 1px solid var(--kant);
+    }
+
+    .nav-lankar a::after {
+        display: none;
+    }
+
+    .header-handlingar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        width: 100%;
+        padding-top: 0.5rem;
+    }
+
+    .header-social-lank {
+        width: 100%;
+        height: auto;
+        padding: 0.75rem 1rem;
+        border-radius: var(--radie-liten);
+        display: inline-flex;
         align-items: center;
-        padding: calc(var(--luft) * 1.5) calc(var(--luft) * 3);
+        justify-content: center;
+        gap: 0.6rem;
+        font-family: var(--font-sans);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-huvud);
     }
 
-    h1 {
-        font-size: 2.5rem;
+    .header-social-lank .header-social-text {
+        display: inline;
     }
 
-    h2 {
-        font-size: 2rem;
+    .header-cta-knapp {
+        width: 100%;
+        padding: 0.85rem;
+    }
+
+    .tema-knapp,
+    #tema {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Hero mobilvy */
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .hero-rubrik {
+        font-size: 2.85rem;
+    }
+
+    .hero-ingress {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-knapp-grupp {
+        justify-content: center;
+    }
+
+    .hero-fordelar {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .hero-ark-ramme {
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto;
+    }
+
+    .hero-flytande-bricka {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -20px;
+        animation: none;
+        width: max-content;
+    }
+
+    /* Om mig mobilvy */
+    .om-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .om-kompetenser {
+        justify-content: center;
+    }
+
+    .om-kontakt-snabb {
+        justify-content: center;
+    }
+
+    .om-ark-ramme {
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        margin: 0 auto;
+    }
+
+    .om-accent-kort {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -20px;
+        width: max-content;
+    }
+
+    /* Kontakt mobilvy */
+    .kontakt-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .kontakt-formular-kort {
+        padding: 2rem 1.5rem;
+    }
+
+    .form-rad-tva {
+        grid-template-columns: 1fr;
     }
 }
 
-/* 9 · Mörkt läge: nya färger när body har klassen morkt */
+/* Extra små skärmar */
+@media (max-width: 30rem) {
+    .hero-rubrik {
+        font-size: 2.35rem;
+    }
+
+    .sektion-rubrik {
+        font-size: 2.2rem;
+    }
+
+    .hero-ark-ramme,
+    .om-ark-ramme {
+        max-width: 270px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .hero-knapp-grupp .knapp {
+        width: 100%;
+    }
+}
+
+/* 15 · Mörkt läge (Stilrent mörkt sammetsläge) */
 body.morkt {
-    --text: #e8e6e1;
-    --yta: #14171f;
-    --yta-2: #1f2430;
-    --kant: #343a48;
-    --primar: #8ab4f8;
+    --bg-huvud: #171514;
+    --bg-yta: #211E1C;
+    --bg-kort: #282421;
+    --bg-kort-hover: #2F2A27;
+    --kant: #38312B;
+    --kant-stark: #4A413A;
+
+    --text-huvud: #ECE4DE;
+    --text-muted: #ABA098;
+    --text-ljus: #FFFFFF;
+
+    --accent: #C38B88;
+    --accent-hover: #D69C99;
+    --accent-ljus: #2E2522;
+    --accent-guld: #D99F8D;
+
+    --header-bg: rgba(23, 21, 20, 0.96);
+    --header-border: #2E2723;
+    --header-skugga: 0 4px 24px rgba(0, 0, 0, 0.4);
+    --banner-bg: #221D1A;
+    --banner-text: #BAA79D;
+
+    --skugga-mjuk: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --skugga-svavande: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+body.morkt .hero-ark-ramme {
+    border-color: #2E2723;
+}
+
+body.morkt .hero-flytande-bricka {
+    background: rgba(40, 36, 33, 0.94);
+    border-color: var(--kant);
+}
+
+body.morkt .om-ark-ramme {
+    border-color: #2E2723;
+}
+
+body.morkt .om-accent-kort {
+    background-color: var(--bg-kort);
+    border-color: var(--kant);
+}
+
+body.morkt .kompetens-tagg {
+    background-color: var(--bg-yta);
+    color: var(--text-huvud);
+    border-color: var(--kant);
+}
+
+body.morkt .form-grupp input,
+body.morkt .form-grupp select,
+body.morkt .form-grupp textarea {
+    background-color: var(--bg-yta);
+    border-color: var(--kant);
+    color: var(--text-huvud);
+}
+
+body.morkt .form-grupp input:focus,
+body.morkt .form-grupp select:focus,
+body.morkt .form-grupp textarea:focus {
+    background-color: var(--bg-kort);
+    border-color: var(--accent);
+}
+
+body.morkt .form-bekraftelse {
+    background-color: #1B2E1D;
+    border-color: #2E5A31;
+}
+
+body.morkt .bekraftelse-titel {
+    color: #81C784;
+}
+
+body.morkt .bekraftelse-text {
+    color: #A5D6A7;
+}
+
+body.morkt .projekt-kategori {
+    background-color: rgba(40, 36, 33, 0.92);
+    border-color: var(--kant);
+}
+
+body.morkt .emblem-bokstav-e {
+    fill: var(--text-huvud);
+}
+
+body.morkt .logotyp-emblem {
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.45));
+}
+
+.sidfot-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidfot-emblem {
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.sidfot-emblem:hover {
+    transform: rotate(6deg) scale(1.06);
+}
+
+.sidfot-emblem-bild {
+    display: block;
+    width: 48px;
+    height: 48px;
 }
