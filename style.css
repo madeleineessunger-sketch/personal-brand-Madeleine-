@@ -1865,3 +1865,33 @@ body.morkt .logotyp-emblem {
 @media (max-width: 40rem) {
     .kurser-rutnat { grid-template-columns: 1fr; }
 }
+
+/* Personligt namn i stor, redaktionell typografi */
+.hero-rubrik.hero-namn {
+    font-size: clamp(2.7rem, 5.4vw, 5.5rem);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin-bottom: 1.25rem;
+}
+.hero-namn span { display: block; }
+.hero-profession {
+    font-family: var(--font-rubrik);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    margin: 0 0 1.5rem;
+    color: var(--text-huvud);
+}
+.hero-lofte {
+    font-family: var(--font-rubrik);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--accent);
+    margin: 0 0 1rem;
+}
+@media (max-width: 30rem) {
+    .hero-rubrik.hero-namn { font-size: clamp(2rem, 10vw, 3rem); }
+    .hero-profession { font-size: 1.05rem; }
+}
