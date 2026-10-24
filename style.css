@@ -19,30 +19,30 @@ html {
 /* 2 · Design-variabler (Ljust läge: Beige, Rosa, Svart & Vit text) */
 :root {
     /* Färger */
-    --bg-huvud: #FAF6F0;           /* Varm ljus beige grund */
-    --bg-yta: #F4EFEA;             /* Mjuk sand- och linnebeige för sektioner */
+    --bg-huvud: #FFF9FA;           /* Varm ljus beige grund */
+    --bg-yta: #FFF1F5;             /* Mjuk sand- och linnebeige för sektioner */
     --bg-kort: #FFFFFF;            /* Kripsigt vitt för kort & formulär */
-    --bg-kort-hover: #FFFDFB;
-    --kant: #EDE4DC;               /* Subtila, eleganta ramlinjer */
-    --kant-stark: #DECFC3;
+    --bg-kort-hover: #FFF4F7;
+    --kant: #EED4DB;               /* Subtila, eleganta ramlinjer */
+    --kant-stark: #D7A4AF;
 
     /* Rosa / Terrakotta accenter */
-    --accent: #BE8280;             /* Dämpad terrakotta / dammig rosa */
-    --accent-hover: #AB706E;       /* Djupare ton vid hovring */
-    --accent-ljus: #F7EDE8;        /* Ljus puderrosa för brickor & ikoner */
-    --accent-guld: #B17B6A;        /* Varm script-ton */
+    --accent: #B46A72;             /* Dämpad terrakotta / dammig rosa */
+    --accent-hover: #914E58;       /* Djupare ton vid hovring */
+    --accent-ljus: #F7C8D3;        /* Ljus puderrosa för brickor & ikoner */
+    --accent-guld: #B46A72;        /* Varm script-ton */
 
     /* Textkontrast */
-    --text-huvud: #221E1C;         /* Svart/espresso text för skarp läsbarhet */
-    --text-muted: #6B615A;         /* Dämpad mörkgrå/brun för brödtext */
+    --text-huvud: #302329;         /* Svart/espresso text för skarp läsbarhet */
+    --text-muted: #6C535B;         /* Dämpad mörkgrå/brun för brödtext */
     --text-ljus: #FFFFFF;          /* Vit text på knappar och brickor */
 
     /* Header & Banner */
-    --header-bg: rgba(250, 246, 240, 0.96);
-    --header-border: #EDE4DC;
+    --header-bg: rgba(255, 249, 250, 0.97);
+    --header-border: #EED4DB;
     --header-skugga: 0 4px 20px rgba(34, 30, 28, 0.04);
-    --banner-bg: #F5EFEB;
-    --banner-text: #8E7469;
+    --banner-bg: #B46A72;
+    --banner-text: #FFFFFF;
 
     /* Typografi & Form */
     --font-rubrik: 'Cormorant Garamond', Georgia, serif;
@@ -806,6 +806,47 @@ section {
 /* 9 · VAD JAG GÖR / TJÄNSTER (Inspirerat av Aura Studio) */
 .tjanster-sektion {
     background-color: var(--bg-yta);
+    padding-top: 0;
+}
+
+.tjanster-intro {
+    max-width: none;
+    min-height: 30rem;
+    margin: 0 -1.5rem 3.5rem;
+    padding: 6rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(34, 30, 28, 0.48), rgba(34, 30, 28, 0.58)),
+        url('img/vad-jag-gor-bakgrund.png');
+    background-size: cover;
+    background-position: center 48%;
+    text-shadow: 0 2px 18px rgba(34, 30, 28, 0.25);
+}
+
+.tjanster-intro .sektion-eyebrow {
+    color: #F7EDE8;
+}
+
+.tjanster-intro .sektion-rubrik {
+    color: #FAF6F0;
+    font-size: clamp(3.5rem, 6vw, 5.5rem);
+    font-weight: 400;
+}
+
+.tjanster-intro .sektion-underrubrik {
+    color: #FAF6F0;
+    max-width: 52ch;
+    margin-bottom: 0;
+}
+
+@media (max-width: 40rem) {
+    .tjanster-intro {
+        min-height: 26rem;
+        padding: 4rem 1.5rem;
+        background-position: 58% center;
+    }
 }
 
 .tjanster-rutnat {
@@ -1011,7 +1052,7 @@ section {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgba(184, 137, 137, 0.12);
+    background-color: rgba(247, 200, 211, 0.45);
     color: var(--accent);
     flex-shrink: 0;
 }
@@ -1069,7 +1110,7 @@ section {
     font-weight: 600;
     letter-spacing: 0.05em;
     color: var(--accent);
-    background-color: rgba(184, 137, 137, 0.12);
+    background-color: rgba(247, 200, 211, 0.45);
     padding: 0.3rem 0.8rem;
     border-radius: 999px;
 }
@@ -1094,6 +1135,28 @@ section {
     color: var(--text-huvud);
     margin: 0 0 0.4rem 0;
     line-height: 1.3;
+}
+
+.utbildning-namn-med-logga {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+.utbildning-namn-med-logga .utbildning-roll {
+    margin-bottom: 0;
+    min-width: 0;
+}
+
+.utbildning-logga {
+    display: block;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    object-fit: contain;
+    border-radius: 50%;
 }
 
 .utbildning-skola {
@@ -1942,38 +2005,50 @@ body.morkt .logotyp-emblem {
     width: 48px;
     height: 48px;
 }
-/* Kurser – mindre kort i samma stil som utbildningen */
-.kurser-rutnat {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* Utfällbar kurslista under utbildningen */
+.utbildning-rutnat {
+    align-items: start;
 }
-.kurs-post {
-    display: flex;
-    align-items: center;
-    gap: 0.85rem;
-    padding: 1.1rem 1.25rem;
-    margin: 0;
+
+.utbildning-kurser {
+    margin-top: 1.25rem;
     font-family: var(--font-sans);
-    font-size: 0.95rem;
-    font-weight: 500;
-    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.utbildning-kurser summary {
+    width: fit-content;
+    padding: 0.4rem 0;
+    color: var(--accent);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.utbildning-kurser summary:hover {
     color: var(--text-huvud);
 }
-.kurs-nummer {
+
+.utbildning-kurser summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.utbildning-kurslista {
+    margin: 0.75rem 0 0;
+    padding: 1rem 0 0 1.5rem;
+    border-top: 1px solid var(--kant);
+    color: var(--text-huvud);
+    line-height: 1.6;
+}
+
+.utbildning-kurslista li + li {
+    margin-top: 0.5rem;
+}
+
+.utbildning-kurslista li::marker {
     color: var(--accent);
-    font-size: 0.75rem;
     font-weight: 600;
-    flex-shrink: 0;
-}
-@media (max-width: 65rem) {
-    .kurser-rutnat { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
-@media (max-width: 40rem) {
-    .kurser-rutnat { grid-template-columns: 1fr; }
 }
 
 /* Personligt namn i stor, redaktionell typografi */
@@ -2005,3 +2080,109 @@ body.morkt .logotyp-emblem {
     .hero-rubrik.hero-namn { font-size: clamp(2rem, 10vw, 3rem); }
     .hero-profession { font-size: 1.05rem; }
 }
+
+/* Kompetenser: lugn, utfällbar lista med tydliga klickytor */
+.kompetenser-sektion {
+    background: var(--bg-yta);
+}
+
+.kompetenser-container {
+    max-width: 78rem;
+    margin: 0 auto;
+}
+
+.kompetenser-intro {
+    max-width: 60ch;
+    color: var(--text-muted);
+    margin: 0 0 2.5rem;
+}
+
+.kompetenser-lista {
+    border-top: 1px solid var(--kant-stark);
+}
+
+.kompetens-rad {
+    border-bottom: 1px solid var(--kant-stark);
+}
+
+.kompetens-rad summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    list-style: none;
+}
+
+.kompetens-rad summary::-webkit-details-marker {
+    display: none;
+}
+
+.kompetens-rad h3 {
+    margin: 0;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--text-huvud);
+}
+
+.kompetens-rad summary:hover h3 {
+    color: var(--accent-hover);
+}
+
+.kompetens-rad summary:focus-visible {
+    outline: 2px solid var(--accent-hover);
+    outline-offset: 5px;
+    border-radius: 2px;
+}
+
+.kompetens-vaxla {
+    position: relative;
+    flex: 0 0 20px;
+    height: 20px;
+    color: var(--text-huvud);
+}
+
+.kompetens-vaxla::before,
+.kompetens-vaxla::after {
+    content: "";
+    position: absolute;
+    background: currentColor;
+}
+
+.kompetens-vaxla::before {
+    width: 18px;
+    height: 2px;
+    top: 9px;
+    left: 1px;
+}
+
+.kompetens-vaxla::after {
+    width: 2px;
+    height: 18px;
+    left: 9px;
+    top: 1px;
+}
+
+.kompetens-rad[open] .kompetens-vaxla::after {
+    display: none;
+}
+
+.kompetens-rad > p {
+    max-width: 75ch;
+    margin: 0;
+    padding: 0 2.5rem 1.75rem 0;
+    color: var(--text-muted);
+}
+
+/* Ljusare rosa och kompaktare kompetenser – endast lokal förhandsvisning */
+body:not(.morkt) .kontakt-sektion {
+    background: linear-gradient(180deg, #FFFAFB 0%, #FFF5F8 100%);
+}
+body:not(.morkt) .sidfot { background-color: #FFF5F8; }
+.kompetenser-sektion { padding-top: 3rem; padding-bottom: 3rem; }
+.kompetenser-container { max-width: 64rem; }
+.kompetenser-container .sektion-rubrik { font-size: clamp(2rem, 4vw, 2.6rem); }
+.kompetenser-intro { font-size: 0.98rem; margin-bottom: 1.5rem; }
+.kompetens-rad summary { padding: 1rem 0; gap: 1rem; }
+.kompetens-rad h3 { font-size: clamp(1.2rem, 2.2vw, 1.5rem); }
+.kompetens-rad > p { font-size: 0.95rem; padding-bottom: 1rem; }
